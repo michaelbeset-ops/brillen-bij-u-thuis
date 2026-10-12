@@ -52,7 +52,7 @@ const sterren = [1, 2, 3, 4, 5];
 // Vertraging voor het binnenkomen, als class: een style-attribuut zou door de CSP geblokkeerd worden.
 const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
 ---
-<Base title="Brillen bij u thuis | De opticien aan huis door midden en zuid Nederland" description="Opticien aan huis in midden en zuid Nederland. Kosteloze oogmeting en advies bij u thuis, ruime keuze in monturen. Teruggave van uw zorgverzekering krijgt u ook bij ons. Bel 06 555 77 424." schema>
+<Base title="Opticien aan huis, oogmeting gratis | Brillen bij u thuis" description="Opticien aan huis in midden en zuid Nederland. Gratis oogmeting en advies bij u thuis. Teruggave zorgverzekering krijgt u ook bij ons. Bel 06 555 77 424." schema>
   <div class="relative">
     <Kop />
 
@@ -63,8 +63,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
 
       <div class="wrap w-full pb-28 pt-40 md:pb-20 lg:pt-48">
         <div class="max-w-[46rem]">
-          <p class="eyebrow eyebrow-licht">De opticien aan huis</p>
-          <h1 id="inhoud" class="mt-5 text-hero">Een nieuwe bril, gewoon bij u <span class="text-merk-licht">thuis.</span></h1>
+          <h1 id="inhoud"><span class="eyebrow eyebrow-licht block">Opticien aan huis</span><span class="mt-5 block text-hero">Een nieuwe bril, gewoon bij u <span class="text-merk-licht">thuis.</span></span></h1>
           <p class="mt-7 max-w-xl text-xl leading-relaxed text-wit md:text-[1.5rem]">Oogmeting aan huis? Een nieuwe bril aanschaffen bij u thuis? Wij komen naar u toe, door midden en zuid Nederland.</p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a href={site.telHref} class="knop knop-merk num"><Icoon naam="tel" />Bel {site.tel}</a>
@@ -132,7 +131,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
               <article class="kaart group flex h-full flex-col overflow-hidden">
                 <div class="relative overflow-hidden">
                   <Image src={v.src} alt={v.alt} widths={[420, 640, 860]} sizes="(min-width: 1024px) 400px, (min-width: 768px) 46vw, 85vw" quality={70} class={`aspect-[3/2] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] ${v.pos}`} />
-                  <span class="absolute left-4 top-4 rounded-full bg-inkt/85 px-3 py-1 text-[.875rem] font-bold text-wit">{v.bron}</span>
+                  {site.voorstel && <span class="absolute left-4 top-4 rounded-full bg-inkt/85 px-3 py-1 text-[.875rem] font-bold text-wit">{v.bron}</span>}
                 </div>
                 <div class="flex flex-1 flex-col p-6 sm:p-8">
                   <h3 class="text-[clamp(1.6rem,1vw+1.3rem,2rem)]">{v.t}</h3>
@@ -204,7 +203,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
               <p class="mt-2 text-[1rem] font-bold leading-snug text-wit/90">oogmeting en advies</p>
             </div>
           </div>
-          <figcaption class="col-span-2 sm:col-span-5 text-[.9375rem] text-mist">Eigen foto's van brillenbijuthuis.nl. Gezicht van de klant onherkenbaar gemaakt.</figcaption>
+          {site.voorstel && <figcaption class="col-span-2 sm:col-span-5 text-[.9375rem] text-mist">Eigen foto's van brillenbijuthuis.nl. Gezicht van de klant onherkenbaar gemaakt.</figcaption>}
         </figure>
         <div class="lg:col-span-6">
           <p class="rijs eyebrow eyebrow-licht">Over ons</p>
@@ -272,7 +271,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
             <p class="eyebrow">Afspraak aan huis</p>
             <h2 id="t-afspraak" class="mt-4 text-4xl">Waar mogen we langskomen?</h2>
           </div>
-          <p class="rijs max-w-md text-xl text-steen lg:col-span-5 lg:self-end [--d:.1s]">Kies wat past. U ziet meteen het bericht; versturen doet u zelf in WhatsApp. Of bel ons gewoon.</p>
+          <p class="rijs max-w-md text-xl text-steen lg:col-span-5 lg:self-end [--d:.1s]">Kies wat past. U ziet meteen het bericht en verstuurt het zelf, via WhatsApp of e-mail. Of bel ons gewoon.</p>
         </div>
 
         <form class="mt-12 grid grid-cols-[minmax(0,1fr)] gap-8 lg:mt-14 lg:grid-cols-12" data-afspraak>
@@ -319,6 +318,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
               <p class="text-lg font-bold text-mist">Uw bericht</p>
               <p class="mt-4 min-h-[9rem] whitespace-pre-line rounded-[12px] bg-inkt-2 px-5 py-5 text-[1.1875rem] leading-relaxed" data-voorbeeld aria-live="polite"></p>
               <a href={waHoi} class="knop knop-groen mt-6 w-full" data-verstuur target="_blank" rel="noopener noreferrer"><Icoon naam="wa" />Versturen via WhatsApp</a>
+              <a href={`mailto:${site.mail}`} class="knop knop-wit mt-3 w-full" data-mail>Liever per e-mail</a>
               <div class="mt-7 border-t border-lijn pt-6">
                 <p class="text-mist">Of bel direct:</p>
                 <a href={site.telHref} class="num mt-1 block text-[clamp(2rem,3vw+1rem,2.8rem)] font-[800] leading-tight text-wit no-underline hover:text-merk-licht">{site.tel}</a>
@@ -353,7 +353,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
                 <blockquote class="mt-5 flex-1 text-lg leading-relaxed">“{r.tekst}”</blockquote>
                 <figcaption class="mt-6 flex items-center gap-3 border-t border-lijn-licht pt-5">
                   <span class="grid h-11 w-11 flex-none place-items-center rounded-full bg-papier-2 text-lg font-bold">{r.naam[0]}</span>
-                  <span><b class="block">{r.naam}</b><span class="text-steen">Google review, {r.wanneer}</span></span>
+                  <span><b class="block">{r.naam}</b><span class="text-steen">Google review</span></span>
                 </figcaption>
               </figure>
             </li>
@@ -445,6 +445,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
   const f = document.querySelector<HTMLFormElement>('[data-afspraak]');
   const vb = document.querySelector<HTMLElement>('[data-voorbeeld]');
   const knop = document.querySelector<HTMLAnchorElement>('[data-verstuur]');
+  const mail = document.querySelector<HTMLAnchorElement>('[data-mail]');
   if (f && vb && knop) {
     const tekst = () => {
       const d = new FormData(f);
@@ -460,7 +461,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
       if (naam) r.push(`Groet, ${naam}`);
       return r.join('\n');
     };
-    const zet = () => { const t = tekst(); vb.textContent = t; knop.href = `${site.wa}?text=${encodeURIComponent(t)}`; };
+    const zet = () => { const t = tekst(); vb.textContent = t; knop.href = `${site.wa}?text=${encodeURIComponent(t)}`; if (mail) mail.href = `mailto:${site.mail}?subject=${encodeURIComponent('Afspraak aan huis')}&body=${encodeURIComponent(t)}`; };
     f.addEventListener('input', zet); f.addEventListener('change', zet);
     f.addEventListener('submit', (e) => e.preventDefault());
     zet();

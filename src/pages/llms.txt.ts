@@ -32,7 +32,7 @@ ${faq.map(([v, a]) => `### ${v}\n\n${a}`).join('\n\n')}
 ## Pagina's
 
 - [Homepage](${thuis}): diensten, werkwijze, afspraak maken, reviews en contact
-- [Privacyverklaring](${new URL('privacy/', thuis).href})
+- [Privacy en bedrijfsgegevens](${new URL('privacy/', thuis).href})
 `;
   return new Response(tekst, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };

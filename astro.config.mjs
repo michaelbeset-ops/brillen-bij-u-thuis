@@ -31,6 +31,14 @@ export default defineConfig({
       ],
     },
   },
+  // De oude site (Strato) had losse pagina's. Na de verhuizing sturen die adressen door, zodat links en Google-resultaten blijven werken.
+  redirects: voorstel ? {} : {
+    '/Home': '/',
+    '/Over-ons': '/#over',
+    '/Diensten': '/#diensten',
+    '/Contact': '/#contact',
+    '/Bedrijfsgegevens': '/privacy/#bedrijfsgegevens',
+  },
   integrations: [sitemap({ filter: (p) => !p.includes('/404') })],
   vite: { plugins: [tailwindcss()] },
 });
