@@ -9,8 +9,8 @@ import sitemap from '@astrojs/sitemap';
 const voorstel = process.env.PUBLIC_VOORSTEL === '1';
 
 export default defineConfig({
-  site: voorstel ? 'https://michaelbeset-ops.github.io' : 'https://brillenbijuthuis.nl',
-  base: voorstel ? '/sitefront/brillen-bij-u-thuis' : '/',
+  site: voorstel ? 'https://voorstel.sitefront.nl' : 'https://brillenbijuthuis.nl',
+  base: voorstel ? '/brillen-bij-u-thuis' : '/',
   trailingSlash: 'ignore',
   devToolbar: { enabled: false },
   markdown: { syntaxHighlight: false },
