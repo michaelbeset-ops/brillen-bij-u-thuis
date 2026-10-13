@@ -13,7 +13,7 @@ export const GET: APIRoute = ({ site: domein }) => {
 
 - Telefoon en WhatsApp: ${site.tel} (+31 6 55577424)
 - E-mail: ${site.mail}
-- Bereikbaar: ${open[0]} tot en met ${open[open.length - 1]}, 09:00 tot 17:00 uur. Buiten die tijden een afspraak? Neem even contact op.
+- Bereikbaar: ${open[0]} tot en met ${open[open.length - 1]}, 09:00 tot 17:00 uur.
 - Werkgebied: ${site.werkgebied}, bij de klant thuis
 - KvK: ${site.kvk}
 - Website: ${thuis}
@@ -21,7 +21,7 @@ export const GET: APIRoute = ({ site: domein }) => {
 ## Diensten
 
 - Oogmeting aan huis: kosteloos, net als het advies dat daaruit volgt. Gemeten met een pasbril, net als bij de oogarts.
-- Bril op maat: vertebril, leesbril, bifocale bril, multifocale bril of zonnebril, met een ruime keuze in monturen. U betaalt alleen de bril die u aanschaft.
+- Bril op maat: vertebril, leesbril, bifocale bril, multifocale bril of zonnebril, met een ruime keuze in monturen.
 - Zorgverzekering: ${zorg.uitleg}
 - Officieel samenwerkingspartner van Allemaal Aafje, Envida ledenservice, Thebe extra en Meander eXtra.
 

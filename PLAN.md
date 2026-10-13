@@ -18,6 +18,7 @@ een week oud). Het adres is een woonadres: alleen Tilburg tonen. Naam opticien s
 
 ## Ronde 2 (12-10-2026), op verzoek van Michael
 - Tekst: "thuis afgeleverd" en "nadien kosteloos bijstellen" overal eruit (dienstkaart, werkwijze, letterkaart, topbalk, footer, formulier).
+- 13-10-2026 (Paul): ook "afspraken buiten openingstijden" en "dan betaalt u de bril die u aan wilt schaffen" eruit.
 - Zorgverzekering prominent: eigen sectie #zorgverzekering (tekst letterlijk van hun pagina Diensten), rode dienstkaart, menu-item,
   topbalk, hero, werkwijze stap 4 en een FAQ-vraag.
 - Mobiel: diensten, werkwijze en reviews zijn veegrijen (scroll-snap) met teller en pijlknoppen; vanaf 768px gewoon grid.

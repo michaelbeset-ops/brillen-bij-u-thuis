@@ -26,6 +26,7 @@ export const site = {
 };
 
 // Letterlijk van hun pagina Diensten. Op verzoek van de klant (12-10-2026) prominent op de site; "thuis afgeleverd" en "kosteloos bijstellen" eruit.
+// Op verzoek van Paul (13-10-2026) ook eruit: alles over bijstellen, "afspraken buiten openingstijden" en "dan betaalt u de bril die u aan wilt schaffen".
 export const zorg = {
   kop: 'Teruggave van uw zorgverzekering? Die krijgt u ook bij ons.',
   kort: 'Recht op een teruggave vanuit uw zorgverzekering? Die krijgt u ook bij ons.',
@@ -35,12 +36,12 @@ export const zorg = {
 // Vragen en antwoorden, alleen met feiten uit hun eigen site (Home, Over ons, Diensten, Bedrijfsgegevens).
 // Staat zichtbaar op de pagina en als FAQPage in JSON-LD, zodat zoekmachines en AI-assistenten dezelfde antwoorden vinden.
 export const faq: [string, string][] = [
-  ['Kost een oogmeting aan huis iets?', 'Nee. Een oogmeting is kosteloos, net als ons advies wat daar uit volgt. Wilt u een bril aanschaffen? Dan betaalt u de bril die u aan wilt schaffen.'],
+  ['Kost een oogmeting aan huis iets?', 'Nee. Een oogmeting is kosteloos, net als ons advies wat daar uit volgt.'],
   ['Krijg ik een teruggave van mijn zorgverzekering?', 'Mocht u vanuit uw zorgverzekering recht hebben op een teruggave, dan krijgt u die ook bij ons. U dient de factuur in bij uw zorgverzekering. Zij betalen de declaratie uit op de rekening waar de premie van afgeschreven wordt.'],
   ['Waar komen jullie langs?', 'Wij komen bij u thuis, door midden en zuid Nederland. Wij zijn gevestigd in Tilburg.'],
   ['Hoe meten jullie mijn ogen?', 'Wij meten, net als de oogarts, "ouderwets" met een pasbril. Zo krijgt u een hele natuurgetrouwe manier van kijken: de pasbril komt het dichtst in de buurt bij de bril die u op uw neus heeft staan. De meting wordt alleen gedaan door een gediplomeerde opticien.'],
   ['Welke brillen kan ik bij jullie kopen?', 'Een vertebril, een leesbril, een bifocale bril, een multifocale bril of een zonnebril. In alle categorieën bieden wij een ruime keuze in monturen.'],
-  ['Wanneer zijn jullie bereikbaar?', 'Maandag tot en met vrijdag van 09:00 tot 17:00 uur. Wilt u buiten onze openingstijden een afspraak maken, neem dan even contact met ons op.'],
+  ['Wanneer zijn jullie bereikbaar?', 'Maandag tot en met vrijdag van 09:00 tot 17:00 uur.'],
 ];
 
 // Maandag = 1 ... zondag = 0. Bron: bedrijfsgegevens-pagina ("Maandag tot en met vrijdag van 09:00 tot 17:00 uur") en Google.
