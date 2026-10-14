@@ -11,7 +11,7 @@ const nav = [['diensten', 'Diensten'], ['zorgverzekering', 'Zorgverzekering'], [
 const usp = ['Gratis oogmeting en advies bij u thuis', 'Ruime keuze in monturen', 'Teruggave zorgverzekering'];
 ---
 <header class={thuis ? 'absolute inset-x-0 top-0 z-40' : 'relative z-40 bg-inkt'}>
-  <div class={`hidden border-b lg:block ${licht ? 'border-lijn-licht' : 'border-lijn'}`}>
+  <div class={`hidden border-b xl:block ${licht ? 'border-lijn-licht' : 'border-lijn'}`}>
     <div class={`wrap flex h-12 items-center justify-between gap-6 text-[1rem] font-semibold ${licht ? 'text-steen' : 'text-wit/90'}`}>
       <ul class="flex gap-8">
         {usp.map((e) => <li class="flex items-center gap-2"><Icoon naam="vink" class={`h-4 w-4 ${licht ? 'text-merk' : 'text-merk-licht'}`} />{e}</li>)}
