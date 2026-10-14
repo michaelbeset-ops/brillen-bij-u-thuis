@@ -1,0 +1,57 @@
+# Bouwt de site en zet hem op GitHub Pages bij elke push naar main (duurt 1 à 2 minuten).
+#
+# Nu: preview op https://michaelbeset-ops.github.io/brillen-bij-u-thuis/ (noindex, zoals een voorstel).
+# Livegang op brillenbijuthuis.nl: zet hieronder PREVIEW op 'false', zet de DNS bij de registrar
+# en vul in Settings > Pages het custom domain in. De build maakt dan de definitieve, vindbare versie.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  PREVIEW: 'true'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build (preview op github.io)
+        if: env.PREVIEW == 'true'
+        run: npm run build
+        env:
+          PUBLIC_VOORSTEL: '1'
+          SITE_URL: https://michaelbeset-ops.github.io
+          BASE_PATH: /brillen-bij-u-thuis
+      - name: Build (definitief, brillenbijuthuis.nl)
+        if: env.PREVIEW != 'true'
+        run: npm run build && echo brillenbijuthuis.nl > dist/CNAME
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

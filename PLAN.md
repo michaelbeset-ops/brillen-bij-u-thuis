@@ -28,3 +28,8 @@ een week oud). Het adres is een woonadres: alleen Tilburg tonen. Naam opticien s
   FAQPage), robots.txt die ook AI-crawlers toelaat, llms.txt, sitemap. `npm run build:voorstel` = demo: noindex, Disallow, geen JSON-LD.
 - Beveiliging: CSP als meta-tag met hashes (Astro security.csp), geen style-attributen, referrer-policy, rel="noopener noreferrer"
   op externe links, .well-known/security.txt, 404-pagina met noindex, .nojekyll.
+
+## Eigen repo en deploy (14-10-2026)
+- `.github/workflows/deploy.yml` bouwt en publiceert bij elke push naar main (1 à 2 minuten) op GitHub Pages.
+- Nu preview: https://michaelbeset-ops.github.io/brillen-bij-u-thuis/ (noindex). Livegang: PREVIEW op 'false' in de workflow, DNS zetten, custom domain in Settings > Pages.
+- `bron/` staat niet meer in de repo (adres, opgehaalde gegevens); lokaal bewaren. Let op: in de git-geschiedenis staat het nog.

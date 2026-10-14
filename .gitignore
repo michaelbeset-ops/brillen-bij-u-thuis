@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .astro/
+
+# Bronmateriaal (opgehaalde site, Google-gegevens, adres): niet in de openbare repo.
+bron/
