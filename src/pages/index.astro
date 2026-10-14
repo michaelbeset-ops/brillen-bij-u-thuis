@@ -10,6 +10,7 @@ import { site, reviews, overPaul, tijden, waHoi, zorg, faq, url } from '../data/
 import ePassen from '../assets/eigen-passen.jpg';
 import eMonturen from '../assets/eigen-monturen.jpg';
 import sHero from '../assets/s-hero.jpg';
+import heroFoto from '../assets/hero-meting.jpg';
 import ePasglazen from '../assets/eigen-pasglazen.jpg';
 import pAafje from '../assets/p-aafje.png';
 import pEnvida from '../assets/p-envida.png';
@@ -54,7 +55,10 @@ const sterren = [1, 2, 3, 4, 5];
         met donker verloop, kop "Een nieuwe bril, gewoon bij u thuis.". Op mobiel en desktop hetzelfde.
         De belbalk onderin verschijnt pas als de knoppen hier uit beeld zijn (data-hero-knoppen), anders staan ze dubbel. */}
     <section class="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-inkt text-wit" aria-labelledby="inhoud">
-      <Image src={sHero} alt="" widths={[640, 960, 1400, 2000, 2400]} sizes="100vw" loading="eager" fetchpriority="high" quality={66} class="absolute inset-0 -z-20 h-full w-full object-cover object-[60%_30%] md:object-[50%_40%]" />
+      {/* Mobiel en tablet: hun eigen foto van Paul die meet met de pasbril (optie B, 14-10-2026). Desktop: de sfeerfoto van de oma.
+          Elke foto heeft sizes 1px waar hij verborgen is, zodat de browser daar alleen het kleinste bestand ophaalt. */}
+      <Image src={heroFoto} alt="" widths={[480, 720, 960, 1280]} sizes="(min-width: 1024px) 1px, 100vw" loading="eager" fetchpriority="high" quality={68} class="absolute inset-0 -z-20 h-full w-full object-cover object-[35%_8%] lg:hidden" />
+      <Image src={sHero} alt="" widths={[960, 1400, 2000, 2400]} sizes="(min-width: 1024px) 100vw, 1px" loading="eager" quality={66} class="absolute inset-0 -z-20 hidden h-full w-full object-cover object-[50%_40%] lg:block" />
       <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#1d0a2aa6_0%,#1d0a2a33_28%,#1d0a2acc_58%,#1d0a2af7_100%)] md:bg-[linear-gradient(90deg,#1d0a2af7_0%,#1d0a2ae0_34%,#1d0a2a66_62%,#1d0a2a1a_100%),linear-gradient(180deg,#1d0a2ab3_0%,#1d0a2a00_30%,#1d0a2a00_72%,#1d0a2a99_100%)]" aria-hidden="true"></div>
 
       <div class="wrap w-full pb-12 pt-40 md:pb-20 lg:pt-48">
