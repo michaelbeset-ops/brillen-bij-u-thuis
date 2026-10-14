@@ -9,7 +9,6 @@ import { site, reviews, overPaul, tijden, waHoi, zorg, faq, url } from '../data/
 // Alleen eigen beeld van brillenbijuthuis.nl. Zie src/assets/BRONNEN.txt.
 import ePassen from '../assets/eigen-passen.jpg';
 import eMonturen from '../assets/eigen-monturen.jpg';
-import eMeting from '../assets/eigen-meting.jpg';
 import eMetingBreed from '../assets/eigen-meting-breed.jpg';
 import ePasglazen from '../assets/eigen-pasglazen.jpg';
 import pAafje from '../assets/p-aafje.png';
@@ -51,35 +50,23 @@ const sterren = [1, 2, 3, 4, 5];
   <div class="relative">
     <Kop />
 
-    {/* 1. Hero, op elke schermbreedte dezelfde boodschap (4A): hun eigen foto van Paul die meet met de pasbril,
-        5,0 op Google en de officiele partners. Mobiel: foto boven, geen knoppen (de belbalk onderin doet dat).
-        Vanaf 1024px: links tekst, rechts de foto over de volle hoogte. */}
-    <section class="bg-inkt text-wit lg:grid lg:min-h-[100svh] lg:grid-cols-2" aria-labelledby="inhoud">
-      <div class="relative h-[calc(46svh+6rem)] min-h-[25rem] max-h-[40rem] pt-24 md:h-[52svh] md:max-h-[34rem] md:min-h-[19rem] md:pt-0 lg:order-2 lg:h-auto lg:max-h-none">
-        {/* Twee uitsneden: breed voor mobiel, staand voor tablet en desktop. sizes 1px waar hij verborgen is, dan pakt de browser het kleinste bestand. */}
-        <Image src={eMetingBreed} alt="Paul meet met een pasbril bij een klant aan tafel, met de kist pasglazen ervoor" widths={[480, 640, 800, 1100]} sizes="(min-width: 768px) 1px, 100vw" loading="eager" fetchpriority="high" quality={60} class="h-full w-full object-cover object-[45%_0%] md:hidden" />
-        <Image src={eMeting} alt="Paul meet met een pasbril bij een klant aan tafel, met de kist pasglazen ervoor" widths={[640, 1000, 1500]} sizes="(min-width: 1024px) 50vw, (min-width: 768px) 100vw, 1px" loading="eager" quality={62} class="hidden h-full w-full object-cover object-[45%_8%] md:block lg:absolute lg:inset-0 lg:object-[45%_22%]" />
-        <div class="absolute inset-x-0 top-0 hidden h-32 bg-[linear-gradient(180deg,#1d0a2a,#1d0a2a00)] md:block lg:h-48 lg:bg-[linear-gradient(180deg,#1d0a2af2_0%,#1d0a2ab3_45%,#1d0a2a00_100%)]" aria-hidden="true"></div>
-        <div class="absolute inset-x-0 bottom-0 h-16 bg-[linear-gradient(0deg,#1d0a2a,#1d0a2a00)] lg:hidden" aria-hidden="true"></div>
-        {/* Desktop: wat een klant over Paul zegt, op de foto zelf. */}
-        <figure class="absolute bottom-10 left-10 hidden max-w-[22rem] rounded-[16px] bg-wit p-5 text-inkt shadow-[0_14px_40px_#1d0a2a59] xl:block">
-          <div class="flex items-center gap-2"><span class="flex text-merk" aria-hidden="true">{sterren.map(() => <Icoon naam="ster" class="h-4 w-4" />)}</span><span class="text-[.9375rem] text-steen">Google review</span></div>
-          <blockquote class="mt-2 text-lg font-bold leading-snug">“Paul Jansen werkt met aandacht en is rustig en vriendelijk.”</blockquote>
-          <figcaption class="mt-2 text-[.9375rem] text-steen">{overPaul[0].naam}, over de oogmeting bij haar moeder van 103</figcaption>
-        </figure>
-      </div>
-      <div class="wrap relative -mt-2 pb-12 lg:order-1 lg:mt-0 lg:flex lg:max-w-none lg:flex-col lg:justify-center lg:pb-14 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-14 lg:pt-32 xl:pt-36">
-        <h1 id="inhoud"><span class="eyebrow eyebrow-licht block">Gediplomeerde opticien aan huis</span><span class="mt-3 block text-[clamp(2.3rem,2.9vw+1rem,3.9rem)]">Gemeten met een pasbril, net als bij de <span class="text-merk-licht">oogarts.</span></span></h1>
-        <p class="mt-4 max-w-lg text-xl leading-relaxed text-wit/90 lg:mt-6">Gewoon bij u thuis, door midden en zuid Nederland. Oogmeting en advies kosteloos.</p>
-        <div class="mt-8 hidden gap-3 md:flex md:flex-wrap">
-          <a href={site.telHref} class="knop knop-merk num"><Icoon naam="tel" />Bel {site.tel}</a>
-          <a href="#afspraak" class="knop knop-wit"><Icoon naam="wa" />Afspraak maken</a>
+    {/* 1. Hero (14-10-2026, frisse versie): hun eigen foto van Paul die meet, schermvullend, met de tekst groot erover.
+        Paul staat links boven in de foto; de tekst staat onderin op een donker verloop, zodat zijn gezicht vrij blijft.
+        De belbalk onderin verschijnt pas als de knoppen hier uit beeld zijn (data-hero-knoppen), anders staan ze dubbel. */}
+    <section class="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-inkt text-wit" aria-labelledby="inhoud">
+      <Image src={eMetingBreed} alt="Paul meet met een pasbril bij een klant aan tafel, met de kist pasglazen ervoor" widths={[480, 640, 800, 1100, 1500]} sizes="100vw" loading="eager" fetchpriority="high" quality={62} class="absolute inset-0 -z-20 h-full w-full object-cover object-[22%_0%] md:object-[50%_10%]" />
+      <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#1d0a2a59_0%,#1d0a2a00_20%,#1d0a2a1a_34%,#1d0a2ae6_56%,#1d0a2a_100%)] md:bg-[linear-gradient(90deg,#1d0a2ae6_0%,#1d0a2ab3_38%,#1d0a2a00_70%),linear-gradient(180deg,#1d0a2a66_0%,#1d0a2a00_25%,#1d0a2a00_55%,#1d0a2acc_100%)]" aria-hidden="true"></div>
+
+      <div class="wrap w-full pb-10 pt-40 md:pb-16">
+        <div class="max-w-3xl">
+          <h1 id="inhoud"><span class="eyebrow eyebrow-licht block">Gediplomeerde opticien aan huis</span><span class="mt-3 block text-[clamp(2.5rem,4.4vw+1rem,4.9rem)] leading-[.98] tracking-[-.03em]">Gemeten met een pasbril, net als bij de <span class="text-merk-licht">oogarts.</span></span></h1>
+          <p class="mt-5 max-w-xl text-xl leading-relaxed text-wit/95 md:text-[1.375rem]">Gewoon bij u thuis of in het verzorgingshuis, door midden en zuid Nederland. Oogmeting en advies kosteloos.</p>
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-hero-knoppen>
+            <a href="#afspraak" class="knop bg-wit text-inkt hover:bg-papier-2">Afspraak maken<Icoon naam="pijl" /></a>
+            <a href={site.telHref} class="knop knop-wit num"><Icoon naam="tel" />Bel {site.tel}</a>
+          </div>
+          <a href="#reviews" class="mt-6 flex w-fit items-center gap-2 text-[1.0625rem] text-wit no-underline"><span class="flex text-merk-licht" aria-hidden="true">{sterren.map(() => <Icoon naam="ster" class="h-4 w-4" />)}</span><b class="num">{site.google.score}</b><span class="whitespace-nowrap text-wit/85">uit {site.google.aantal} Google-reviews</span></a>
         </div>
-        <a href="#reviews" class="mt-5 flex w-fit items-center gap-2 text-[1.0625rem] text-wit no-underline md:mt-7"><span class="flex text-merk-licht" aria-hidden="true">{sterren.map(() => <Icoon naam="ster" class="h-4 w-4" />)}</span><b class="num">{site.google.score}</b><span class="whitespace-nowrap text-mist">uit {site.google.aantal} Google-reviews</span></a>
-        <p class="mt-7 text-[.9375rem] font-bold text-mist lg:mt-8">Officieel samenwerkingspartner van</p>
-        <ul class="mt-3 grid max-w-md grid-cols-4 gap-2 lg:gap-3">
-          {partners.map((p) => <li class="grid h-14 place-items-center rounded-[10px] bg-wit p-1.5 lg:h-16"><Image src={p.src} alt={p.alt} widths={[200]} sizes="100px" class="max-h-10 w-auto object-contain" /></li>)}
-        </ul>
       </div>
     </section>
   </div>
@@ -95,6 +82,12 @@ const sterren = [1, 2, 3, 4, 5];
           </li>
         ))}
       </ul>
+      <div class="wrap flex flex-col gap-3 border-t border-lijn-licht py-5 md:flex-row md:items-center md:gap-8">
+        <p class="text-[.9375rem] font-bold text-steen">Officieel samenwerkingspartner van</p>
+        <ul class="grid w-full max-w-md grid-cols-4 items-center gap-4">
+          {partners.map((p) => <li class="flex justify-center"><Image src={p.src} alt={p.alt} widths={[200]} sizes="100px" class="max-h-9 w-auto object-contain md:max-h-10" /></li>)}
+        </ul>
+      </div>
     </section>
 
     {/* 3. Diensten: twee fotokaarten en de zorgverzekering, die hier volledig wordt uitgelegd. Op mobiel een veegrij. */}
