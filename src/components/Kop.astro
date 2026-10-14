@@ -6,7 +6,7 @@ import Merk from './Merk.astro';
 interface Props { thuis?: boolean; licht?: boolean }
 const { thuis = true, licht = false } = Astro.props;
 const h = (id: string) => (thuis ? `#${id}` : url(`#${id}`));
-const nav = [['diensten', 'Diensten'], ['zorgverzekering', 'Zorgverzekering'], ['over', 'Over ons'], ['werkwijze', 'Werkwijze'], ['afspraak', 'Afspraak'], ['contact', 'Contact']];
+const nav = [['diensten', 'Diensten'], ['zorgverzekering', 'Zorgverzekering'], ['over', 'Over Paul'], ['werkwijze', 'Werkwijze'], ['afspraak', 'Afspraak'], ['contact', 'Contact']];
 // Eerste twee letterlijk van hun folder (Google, "Van eigenaar"); de derde van hun pagina Diensten.
 const usp = ['Gratis oogmeting en advies bij u thuis', 'Ruime keuze in monturen', 'Teruggave zorgverzekering'];
 ---
