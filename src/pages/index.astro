@@ -105,8 +105,8 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
 
   <main>
     {/* 2. De letterkaart + wie we zijn + partners */}
-    <section class="bg-wit py-24 md:py-32" aria-labelledby="t-wie">
-      <div class="wrap grid grid-cols-[minmax(0,1fr)] items-center gap-y-14 lg:grid-cols-12 lg:gap-x-16">
+    <section class="bg-wit py-14 md:py-24 lg:py-32" aria-labelledby="t-wie">
+      <div class="wrap grid grid-cols-[minmax(0,1fr)] items-center gap-y-10 lg:grid-cols-12 lg:gap-x-16">
         <figure class="rijs lg:col-span-6" aria-label="Letterkaart: oogmeting aan huis, kosteloos, met een pasbril, en een bril op maat. Teruggave van uw zorgverzekering.">
           <div class="rounded-[14px] border border-lijn-licht bg-papier px-4 py-9 sm:px-8 md:py-12">
             <div class="space-y-4 [container-type:inline-size] md:space-y-5" aria-hidden="true">
@@ -141,7 +141,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
     </section>
 
     {/* 3. Diensten: twee fotokaarten en de zorgverzekering. Op mobiel een veegrij, zodat niet alles onder elkaar staat. */}
-    <section id="diensten" class="py-24 md:py-32" aria-labelledby="t-diensten">
+    <section id="diensten" class="py-14 md:py-24 lg:py-32" aria-labelledby="t-diensten">
       <div class="wrap">
         <div class="rijs max-w-3xl">
           <p class="eyebrow">Diensten</p>
@@ -189,7 +189,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
     </section>
 
     {/* 3b. Zorgverzekering: op verzoek van de klant groot en duidelijk. Tekst letterlijk van hun pagina Diensten. */}
-    <section id="zorgverzekering" class="border-y border-lijn-licht bg-wit py-20 md:py-28" aria-labelledby="t-zorg">
+    <section id="zorgverzekering" class="border-y border-lijn-licht bg-wit py-12 md:py-24" aria-labelledby="t-zorg">
       <div class="wrap grid gap-y-10 lg:grid-cols-12 lg:gap-x-16">
         <div class="rijs lg:col-span-6">
           <p class="eyebrow flex items-center gap-3"><Icoon naam="polis" class="h-6 w-6" />Zorgverzekering</p>
@@ -213,8 +213,8 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
     </section>
 
     {/* 4. Over ons: eigen foto van een meting met de pasbril */}
-    <section id="over" class="bg-inkt py-24 text-wit md:py-32" aria-labelledby="t-over">
-      <div class="wrap grid items-center gap-y-14 lg:grid-cols-12 lg:gap-x-16">
+    <section id="over" class="bg-inkt py-14 text-wit md:py-24 lg:py-32" aria-labelledby="t-over">
+      <div class="wrap grid items-center gap-y-10 lg:grid-cols-12 lg:gap-x-16">
         <figure class="rijs grid grid-cols-2 gap-4 sm:grid-cols-5 lg:col-span-6">
           <Image src={ePassen} alt="De opticien past bij een klant thuis een montuur, met de lade monturen ervoor" widths={[500, 800, 1100]} sizes="(min-width: 1024px) 34vw, 60vw" quality={70} class="col-span-2 aspect-[3/4] h-full w-full rounded-[14px] object-cover object-[42%_35%] sm:col-span-3" />
           <div class="col-span-2 grid grid-cols-2 gap-4 sm:flex sm:flex-col">
@@ -246,7 +246,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
     </section>
 
     {/* 5. Werkwijze: op mobiel een veegrij */}
-    <section id="werkwijze" class="py-24 md:py-32" aria-labelledby="t-werk">
+    <section id="werkwijze" class="py-14 md:py-24 lg:py-32" aria-labelledby="t-werk">
       <div class="wrap">
         <div class="rijs max-w-2xl">
           <p class="eyebrow">Werkwijze</p>
@@ -273,14 +273,14 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
 
     {/* 6. Een stem uit de reviews */}
     <section class="bg-merk text-wit" aria-label="Uit een review">
-      <figure class="wrap py-20 md:py-24">
+      <figure class="wrap py-12 md:py-20">
         <blockquote class="rijs max-w-5xl text-[clamp(1.8rem,3vw+.8rem,3.4rem)] font-[800] leading-[1.12] tracking-[-.02em]">“Goed te weten dat de opticien naar je toe komt als je zelf niet meer naar de opticien toe kunt!”</blockquote>
         <figcaption class="rijs mt-7 text-lg text-wit/90 [--d:.08s]">Adri v. · Google review</figcaption>
       </figure>
     </section>
 
     {/* 7. Wow: afspraak aan huis aanvragen -> vooraf ingevuld WhatsApp */}
-    <section id="afspraak" class="bg-papier-2 py-24 md:py-32" aria-labelledby="t-afspraak">
+    <section id="afspraak" class="bg-papier-2 py-14 md:py-24 lg:py-32" aria-labelledby="t-afspraak">
       <div class="wrap">
         <div class="grid gap-y-6 lg:grid-cols-12 lg:gap-x-12">
           <div class="rijs lg:col-span-7">
@@ -346,7 +346,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
     </section>
 
     {/* 8. Reviews: op mobiel een veegrij */}
-    <section id="reviews" class="py-24 md:py-32" aria-labelledby="t-rev">
+    <section id="reviews" class="py-14 md:py-24 lg:py-32" aria-labelledby="t-rev">
       <div class="wrap">
         <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div class="rijs lg:col-span-7">
@@ -386,7 +386,7 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
     </section>
 
     {/* 8b. Veelgestelde vragen: alleen antwoorden uit hun eigen teksten. Zelfde inhoud staat als FAQPage in de JSON-LD en in llms.txt. */}
-    <section id="vragen" class="bg-papier-2 py-24 md:py-32" aria-labelledby="t-vragen">
+    <section id="vragen" class="bg-papier-2 py-14 md:py-24 lg:py-32" aria-labelledby="t-vragen">
       <div class="wrap grid gap-y-10 lg:grid-cols-12 lg:gap-x-16">
         <div class="rijs lg:col-span-4">
           <p class="eyebrow">Vragen</p>
@@ -405,8 +405,8 @@ const d = ['[--d:0s]', '[--d:.06s]', '[--d:.12s]', '[--d:.18s]'];
     </section>
 
     {/* 9. Contact en tijden */}
-    <section id="contact" class="border-t border-lijn-licht bg-wit py-24 md:py-32" aria-labelledby="t-contact">
-      <div class="wrap grid grid-cols-[minmax(0,1fr)] gap-y-14 lg:grid-cols-12 lg:gap-x-14">
+    <section id="contact" class="border-t border-lijn-licht bg-wit py-14 md:py-24 lg:py-32" aria-labelledby="t-contact">
+      <div class="wrap grid grid-cols-[minmax(0,1fr)] gap-y-10 lg:grid-cols-12 lg:gap-x-14">
         <div class="lg:col-span-7">
           <p class="rijs eyebrow">Contact</p>
           <h2 id="t-contact" class="rijs mt-4 text-4xl">Bel ons gerust.</h2>
