@@ -9,20 +9,19 @@ const h = (id: string) => (thuis ? `#${id}` : url(`#${id}`));
 const nav = [['diensten', 'Diensten'], ['zorgverzekering', 'Zorgverzekering'], ['over', 'Over ons'], ['werkwijze', 'Werkwijze'], ['afspraak', 'Afspraak'], ['contact', 'Contact']];
 ---
 {/* Zwevende witte kopbalk boven de foto: logo, bellen en een duidelijke Menu-knop. Op de homepage over de hero, elders op paars. */}
-<header class={thuis ? 'absolute inset-x-0 top-0 z-40 bg-wit lg:bg-transparent' : 'relative z-40 bg-wit lg:bg-inkt'}>
+<header class={thuis ? 'absolute inset-x-0 top-0 z-40' : 'relative z-40 bg-inkt'}>
   <div class="wrap">
-    {/* Mobiel en tablet: strakke witte balk over de volle breedte. Desktop: transparant op paars, zoals eerder goedgekeurd. */}
-    <div class="flex h-[4.5rem] items-center justify-between gap-3 md:h-[5.5rem] lg:h-28 lg:gap-6">
-      <span class="lg:hidden"><Merk donker klein /></span><span class="hidden lg:block"><Merk /></span>
+    <div class="flex h-24 items-center justify-between gap-3 md:h-28 lg:gap-6">
+      <Merk />
       <nav aria-label="Hoofdmenu" class="hidden xl:block">
         <ul class="flex gap-8 text-[1.125rem] font-bold">
           {nav.map(([id, t]) => <li><a href={h(id)} class="text-wit/90 no-underline transition-colors duration-200 hover:text-merk-licht">{t}</a></li>)}
         </ul>
       </nav>
       <div class="flex items-center gap-2">
-        <a href={site.telHref} class="hidden h-11 w-11 place-items-center rounded-full bg-merk text-wit no-underline transition-colors hover:bg-merk-diep min-[360px]:grid md:hidden" aria-label={`Bel ${site.tel}`}><Icoon naam="tel" class="h-5 w-5" /></a>
+        <a href={site.telHref} class="hidden h-12 w-12 place-items-center rounded-full bg-merk text-wit no-underline transition-colors hover:bg-merk-diep min-[375px]:grid md:hidden" aria-label={`Bel ${site.tel}`}><Icoon naam="tel" class="h-5 w-5" /></a>
         <a href={site.telHref} class="knop knop-merk num hidden min-h-12 px-5 text-[1.0625rem] md:inline-flex"><Icoon naam="tel" />Bel {site.tel}</a>
-        <button type="button" class="flex h-11 items-center gap-2 rounded-full border-2 border-papier-3 px-4 text-[1.0625rem] font-bold text-inkt transition-colors hover:border-inkt lg:h-12 lg:border-wit/40 lg:text-wit lg:hover:border-wit xl:hidden" aria-expanded="false" aria-controls="menu-nav" data-menu-knop>
+        <button type="button" class="flex h-12 items-center gap-2 rounded-full border-2 border-wit/40 px-3.5 text-[1.0625rem] font-bold text-wit transition-colors hover:border-wit min-[400px]:px-4 xl:hidden" aria-expanded="false" aria-controls="menu-nav" data-menu-knop>
           <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
           Menu
         </button>
