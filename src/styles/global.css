@@ -195,4 +195,18 @@
     .strookrij { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; overflow: visible; width: 100%; max-width: 80rem; margin-inline: auto; padding-inline: 2.5rem; }
   }
   @media (min-width: 1024px) { .strookrij { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+  /* Doorlopende logoband: twee identieke sets naast elkaar, schuift een set-breedte op (van links naar rechts). */
+  .logoband { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .logoband-spoor { display: flex; width: max-content; animation: logoband 32s linear infinite; }
+  .logoband:hover .logoband-spoor { animation-play-state: paused; }
+  .logoband-set { display: flex; flex: none; align-items: center; gap: 3rem; padding-right: 3rem; }
+  .logoband-set > li { flex: none; }
+  @keyframes logoband { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .logoband { -webkit-mask-image: none; mask-image: none; }
+    .logoband-spoor { width: auto; animation: none; }
+    .logoband-set { flex-wrap: wrap; gap: 1rem 2rem; padding-right: 0; }
+    .logoband-set[aria-hidden] { display: none; }
+  }
 }
