@@ -6,8 +6,9 @@ const jaar = new Date().getFullYear();
 const thuis = Astro.url.pathname.replace(/\/$/, '') === import.meta.env.BASE_URL.replace(/\/$/, '');
 const h = (id: string) => (thuis ? `#${id}` : url(`#${id}`));
 const diensten = [['diensten', 'Oogmeting aan huis'], ['diensten', 'Bril op maat'], ['zorgverzekering', 'Teruggave zorgverzekering'], ['vragen', 'Veelgestelde vragen'], ['afspraak', 'Afspraak maken']];
+// data-nosnippet: Google haalt de zoekresultaattekst niet uit de footer (contactregels), maar gebruikt de meta-omschrijving of de paginatekst. Wordt wel gewoon geïndexeerd.
 ---
-<footer class="bg-inkt text-mist">
+<footer class="bg-inkt text-mist" data-nosnippet>
   <div class="wrap grid gap-x-10 gap-y-10 py-12 md:gap-y-12 text-[1.0625rem] sm:grid-cols-2 md:py-24 lg:grid-cols-12">
     <div class="lg:col-span-4">
       <Merk />
