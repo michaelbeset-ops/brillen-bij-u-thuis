@@ -1,5 +1,5 @@
 ---
-import { url, waHoi, site } from '../data/site';
+import { url, waHoi, site, usps } from '../data/site';
 import Icoon from './Icoon.astro';
 import Merk from './Merk.astro';
 // licht: donkere tekst, voor een hero met een lichte achtergrond.
@@ -10,6 +10,12 @@ const nav = [['diensten', 'Diensten'], ['zorgverzekering', 'Zorgverzekering'], [
 ---
 {/* Zwevende witte kopbalk boven de foto: logo, bellen en een duidelijke Menu-knop. Op de homepage over de hero, elders op paars. */}
 <header class={thuis ? 'absolute inset-x-0 top-0 z-40' : 'relative z-40 bg-inkt'}>
+  {/* Bovenbalk met de vier harde punten, alleen vanaf desktop. Op kleinere schermen staan ze in de strook onder de hero. */}
+  <div class="hidden border-b border-lijn bg-inkt-2 lg:block">
+    <ul class="wrap flex h-11 items-center justify-between gap-6 text-[.875rem] text-mist" aria-label="Waarom Brillen bij u thuis">
+      {usps.map((s) => <li class="flex items-center gap-2 whitespace-nowrap"><Icoon naam={s.i} class="h-4 w-4 flex-none text-merk-licht" /><b class="text-wit">{s.t}</b>{s.d}</li>)}
+    </ul>
+  </div>
   <div class="wrap">
     <div class="flex h-24 items-center justify-between gap-3 md:h-28 lg:gap-6">
       <Merk />

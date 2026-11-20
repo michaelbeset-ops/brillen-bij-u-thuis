@@ -27,6 +27,14 @@ export const site = {
 
 // Letterlijk van hun pagina Diensten. Op verzoek van de klant (12-10-2026) prominent op de site; "thuis afgeleverd" en "kosteloos bijstellen" eruit.
 // Op verzoek van Paul (13-10-2026) ook eruit: alles over bijstellen, "afspraken buiten openingstijden" en "dan betaalt u de bril die u aan wilt schaffen".
+// De vier harde punten: bovenbalk (desktop) en strook onder de hero (mobiel en tablet).
+export const usps = [
+  { i: 'vink', t: 'Gediplomeerd', d: 'opticien, met nascholing' },
+  { i: 'vink', t: 'Kosteloos', d: 'oogmeting en advies' },
+  { i: 'polis', t: 'Declarabel', d: 'bij uw zorgverzekering' },
+  { i: 'pin', t: 'Aan huis', d: 'of in het verzorgingshuis' },
+] as const;
+
 export const zorg = {
   kop: 'Teruggave van uw zorgverzekering? Dien gewoon onze factuur in.',
   kort: 'Recht op een teruggave vanuit uw zorgverzekering? Dien onze factuur in, dan betaalt uw verzekeraar u terug.',

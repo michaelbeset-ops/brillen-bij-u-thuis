@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import Kop from '../components/Kop.astro';
 import Voet from '../components/Voet.astro';
 import Icoon from '../components/Icoon.astro';
-import { site, reviews, overPaul, tijden, waHoi, zorg, faq, url } from '../data/site';
+import { site, reviews, overPaul, tijden, waHoi, zorg, faq, url, usps } from '../data/site';
 
 // Alleen eigen beeld van brillenbijuthuis.nl. Zie src/assets/BRONNEN.txt.
 import ePassen from '../assets/eigen-passen.jpg';
@@ -25,12 +25,7 @@ const diensten = [
   { t: 'Een bril op maat', d: 'In alle categorieën bieden wij u een ruime keuze in onze monturen.', l: ['Vertebril of leesbril', 'Bifocale of multifocale bril', 'Zonnebril'], src: eMonturen, pos: 'object-[50%_60%]', alt: 'Lade met monturen die de opticien meeneemt' },
 ];
 
-const strook = [
-  { i: 'vink', t: 'Gediplomeerd', d: 'opticien, met nascholing' },
-  { i: 'vink', t: 'Kosteloos', d: 'oogmeting en advies' },
-  { i: 'polis', t: 'Declarabel', d: 'bij uw zorgverzekering' },
-  { i: 'pin', t: 'Aan huis', d: 'of in het verzorgingshuis' },
-];
+const strook = usps;
 
 const stappen = [
   ['Bel, app of mail', 'Voor een afspraak met één van onze gediplomeerde opticiens.'],
@@ -64,10 +59,10 @@ const sterren = [1, 2, 3, 4, 5];
       <div class="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#1d0a2aa6_0%,#1d0a2a33_28%,#1d0a2acc_58%,#1d0a2af7_100%)] md:bg-[linear-gradient(90deg,#1d0a2af7_0%,#1d0a2ae0_34%,#1d0a2a66_62%,#1d0a2a1a_100%),linear-gradient(180deg,#1d0a2ab3_0%,#1d0a2a00_30%,#1d0a2a00_72%,#1d0a2a99_100%)] lg:hidden" aria-hidden="true"></div>
 
       <div class="relative hidden lg:order-2 lg:block">
-        <Image src={heroFoto} alt="Paul meet met een pasbril bij een klant aan tafel, met de kist pasglazen ervoor" widths={[800, 1200, 1800]} sizes="(min-width: 1024px) 50vw, 1px" loading="eager" quality={70} class="absolute left-0 top-[7.5rem] h-[calc(100%-10rem)] w-[calc(100%-max(2.5rem,calc((100vw-80rem)/2+2.5rem)))] rounded-[28px] object-cover object-[45%_22%]" />
+        <Image src={heroFoto} alt="Paul meet met een pasbril bij een klant aan tafel, met de kist pasglazen ervoor" widths={[800, 1200, 1800]} sizes="(min-width: 1024px) 50vw, 1px" loading="eager" quality={70} class="absolute left-0 top-[10.25rem] h-[calc(100%-12.75rem)] w-[calc(100%-max(2.5rem,calc((100vw-80rem)/2+2.5rem)))] rounded-[28px] object-cover object-[45%_22%]" />
       </div>
 
-      <div class="wrap w-full pb-12 pt-40 md:pb-20 lg:order-1 lg:flex lg:max-w-none lg:flex-col lg:justify-center lg:pb-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-10 lg:pt-32 xl:pt-[max(7.5rem,min(9rem,15vh))]">
+      <div class="wrap w-full pb-12 pt-40 md:pb-20 lg:order-1 lg:flex lg:max-w-none lg:flex-col lg:justify-center lg:pb-10 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-10 lg:pt-[10.25rem] xl:pt-[max(10.25rem,min(11.75rem,19vh))]">
         <div class:list={["max-w-[46rem]", false]}>
           <h1 id="inhoud">
             <span class="eyebrow eyebrow-licht block lg:hidden">Opticien aan huis</span>
@@ -91,15 +86,6 @@ const sterren = [1, 2, 3, 4, 5];
             <li class="flex items-center gap-2"><Icoon naam="polis" class="h-5 w-5 text-merk-licht" /><a href="#zorgverzekering" class="text-wit underline decoration-merk-licht decoration-2 underline-offset-4 hover:text-merk-licht">Teruggave zorgverzekering</a></li>
           </ul>
           <a href="#reviews" class="mt-7 hidden w-fit items-center gap-2 text-[1.0625rem] text-wit no-underline lg:flex"><span class="flex text-merk-licht" aria-hidden="true">{sterren.map(() => <Icoon naam="ster" class="h-4 w-4" />)}</span><b class="num">{site.google.score}</b><span class="whitespace-nowrap text-mist">uit {site.google.aantal} Google-reviews</span></a>
-          {/* Desktop: de vier harde punten in de hero, onder de knoppen. Op mobiel en tablet staan ze in de strook onder de hero. */}
-          <ul class="mt-9 hidden max-w-[34rem] grid-cols-2 gap-x-8 gap-y-5 border-t border-lijn pt-8 lg:grid">
-            {strook.map((s) => (
-              <li class="flex items-center gap-3">
-                <span class="grid h-10 w-10 flex-none place-items-center rounded-full bg-wit/10 text-merk-licht"><Icoon naam={s.i} class="h-5 w-5" /></span>
-                <span class="leading-snug"><b class="block text-[1.0625rem] text-wit">{s.t}</b><span class="text-[.9375rem] text-mist">{s.d}</span></span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
