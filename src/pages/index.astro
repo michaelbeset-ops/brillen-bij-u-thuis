@@ -91,6 +91,15 @@ const sterren = [1, 2, 3, 4, 5];
             <li class="flex items-center gap-2"><Icoon naam="polis" class="h-5 w-5 text-merk-licht" /><a href="#zorgverzekering" class="text-wit underline decoration-merk-licht decoration-2 underline-offset-4 hover:text-merk-licht">Teruggave zorgverzekering</a></li>
           </ul>
           <a href="#reviews" class="mt-7 hidden w-fit items-center gap-2 text-[1.0625rem] text-wit no-underline lg:flex"><span class="flex text-merk-licht" aria-hidden="true">{sterren.map(() => <Icoon naam="ster" class="h-4 w-4" />)}</span><b class="num">{site.google.score}</b><span class="whitespace-nowrap text-mist">uit {site.google.aantal} Google-reviews</span></a>
+          {/* Desktop: de vier harde punten in de hero, onder de knoppen. Op mobiel en tablet staan ze in de strook onder de hero. */}
+          <ul class="mt-9 hidden max-w-[34rem] grid-cols-2 gap-x-8 gap-y-5 border-t border-lijn pt-8 lg:grid">
+            {strook.map((s) => (
+              <li class="flex items-center gap-3">
+                <span class="grid h-10 w-10 flex-none place-items-center rounded-full bg-wit/10 text-merk-licht"><Icoon naam={s.i} class="h-5 w-5" /></span>
+                <span class="leading-snug"><b class="block text-[1.0625rem] text-wit">{s.t}</b><span class="text-[.9375rem] text-mist">{s.d}</span></span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
@@ -99,7 +108,7 @@ const sterren = [1, 2, 3, 4, 5];
   <main class="bg-papier">
     {/* 2. Vertrouwensstrook: de vier harde punten op een rij, in een oogopslag. */}
     <section class="border-b border-lijn-licht bg-wit" aria-label="Waarom Brillen bij u thuis">
-      <ul class="strookrij py-5 md:py-8" tabindex="0" aria-label="Waarom Brillen bij u thuis, veeg opzij voor meer">
+      <ul class="strookrij py-5 md:py-8 lg:hidden" tabindex="0" aria-label="Waarom Brillen bij u thuis, veeg opzij voor meer">
         {strook.map((s) => (
           <li class="flex min-w-0 items-center gap-3 rounded-[14px] border border-lijn-licht bg-papier px-4 py-3 md:border-0 md:bg-transparent md:p-0">
             <span class="grid h-10 w-10 flex-none place-items-center rounded-full bg-[#fdeef2] text-merk md:h-11 md:w-11"><Icoon naam={s.i} class="h-5 w-5" /></span>
@@ -109,7 +118,7 @@ const sterren = [1, 2, 3, 4, 5];
       </ul>
       {/* Partners als doorlopende band (van links naar rechts). De tweede set is een kopie voor een naadloze lus en is verborgen voor schermlezers.
           Bij 'minder beweging' staat de band stil en lopen de logo's door op meerdere regels. Muis erop: de band pauzeert. */}
-      <div class="wrap flex flex-col gap-2 border-t border-lijn-licht py-4 md:flex-row md:items-center md:gap-8">
+      <div class="wrap flex flex-col gap-2 border-t border-lijn-licht py-4 md:flex-row md:items-center md:gap-8 lg:border-t-0 lg:py-5">
         <p class="flex-none text-[.9375rem] font-bold text-steen md:whitespace-nowrap">Officieel samenwerkingspartner van</p>
         <div class="logoband min-w-0 flex-1">
           <div class="logoband-spoor">
